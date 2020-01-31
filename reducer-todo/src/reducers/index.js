@@ -5,12 +5,12 @@
 //   }
 
 export const initialState = {
-  item: "Task / Chore",
+  item: "Master Javascript",
   completed: false,
-  id: Date.time
+  id: new Date()
 };
 
-export const titleReducer = (state, action) => {
+export const toDoReducer = (state, action) => {
   switch (action.type) {
     default:
       return state;
