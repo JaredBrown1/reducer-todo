@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 
 const ToDoForm = props => {
   const [newTodo, setNewToDo] = useState("");

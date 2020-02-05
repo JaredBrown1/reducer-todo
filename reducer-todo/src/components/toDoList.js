@@ -1,6 +1,6 @@
 import React from "react";
-
 import ToDoItem from "./toDoItem";
+import "../App.css";
 
 const ToDoList = props => {
   console.log(props, "coming from todolist");
@@ -8,7 +8,7 @@ const ToDoList = props => {
   return (
     <div>
       {props.state.map(item => {
-        return <ToDoItem toggleCompleted={props.toggleCompleted} item={item} />;
+        return <ToDoItem key={item.id} item={item} />;
       })}
     </div>
   );

@@ -15,27 +15,27 @@ export const initialState = [
 export const toDoReducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_ADD":
-      return {
-        ...state,
-        completed: !state.completed
-      };
+      return state.map(item => {
+        if (item.id === action.payload) {
+          return { ...item, completed: !item.completed };
+        } else {
+          return item;
+        }
+      });
     case "ADD_TASK":
       return [
         { item: action.payload, completed: false, id: new Date() },
         ...state
       ];
     case "TOGGLE_COMPLETED":
-      let completedItem = state.map(item => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            completed: !item.completed
-          };
-        } else {
-          return item;
+      return state.map(item => {
+        if (item.id === action.payload) {
+          console.log(item, "item itself");
+          return { ...item, completed: !item.completed };
         }
+        console.log(item, "else");
+        return item;
       });
-      return completedItem;
     default:
       return state;
   }
