@@ -36,8 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.task {
-  background-color: gray;
-  text-decoration: line-through;
-}
